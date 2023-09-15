@@ -1,0 +1,19 @@
+.container-destacados{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container-destacados img{
+  padding: 2vh;
+  /* width: auto;
+  height:  50vh; */
+  width: 25%;
+  height: auto;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 576px) {
+  /* .container-destacados img{
+    height: 10vh;
+  } */
+}

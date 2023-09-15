@@ -1,0 +1,173 @@
+#inicio{
+    position:sticky;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    background-color: white;
+}
+
+.inicio-datos {
+    color:white;
+    height: 3vh;
+    background-color: #456789;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 1.3rem
+}
+
+.inicio-datos a {
+    margin: 1vh; 
+}
+
+.inicio-datos a:hover {
+    color: gray;
+}
+
+.inicio-info {
+    font-size: 1rem;
+}
+
+.inicio-info a {
+    text-decoration: none; 
+    color: white;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(234, 245, 254);
+}
+
+.logo img {
+    width: 30vh;
+}
+
+.navbar {
+    color: white;
+    position:relative;
+    background: #123456;
+    min-height: 3vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    align-content:center;
+}
+
+.navbar a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    padding: 1vh 10vh;
+    background: #234567;
+}
+  
+.navbar-links{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li{
+    list-style: none;
+}
+
+.navbar input[type="checkbox"] {
+    opacity: 0;
+}
+  
+.navbar input:checked ~ nav {
+    display: block;
+}
+  
+.fa-bars, .fa-times{
+    visibility: hidden; 
+}
+  
+.dropdown-contenido {
+    display: none; 
+    position: absolute; 
+    z-index: 1; 
+    
+}
+
+.dropdown-contenido a {
+    /* padding: 1vh 5vh; */
+    /* padding-left: 1vh; */
+    display: block;
+    text-align: left;
+}
+
+.dropdown-contenido a:hover, .navbar-links a:hover {
+    background-color:#456789;
+}
+
+.dropdown:hover .dropdown-contenido {
+    display: block; 
+} 
+
+@media only screen and (min-width: 320px) and (max-width: 576px) {
+    .inicio-datos {
+        padding-left: 1vh;
+        padding-right: 1vh;
+        font-size: 0.6rem;
+    }
+    
+    .inicio-datos a {
+        margin: 0.5vh;
+    }
+    
+    .inicio-info {
+        font-size: 0.5rem;
+    }
+
+    .logo img {
+        width: 12vh;
+    }
+    
+    .navbar{
+        font-size: 0.7rem;
+        justify-content: left;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+      
+    .fa-bars, .fa-times{
+        visibility:visible;
+    }
+
+    .navbar input:checked ~ .fa-bars {
+        display: none;
+    }
+    
+    .navbar input:not(:checked) ~ .fa-times {
+        display: none;
+    }
+
+    .navbar input[type="checkbox"], .fa-bars, .fa-times {
+        position: absolute;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        right: 0;
+        top: 0;
+        width: 3vh;
+        height: 3vh;
+    }
+  
+    .navbar-links {
+        display: block; 
+    }
+
+    .navbar .fa-bars, .navbar .fa-times {
+        pointer-events: none;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 1180px) {
+
+}
