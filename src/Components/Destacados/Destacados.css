@@ -13,7 +13,8 @@
 }
 
 @media only screen and (min-width: 320px) and (max-width: 576px) {
-  /* .container-destacados img{
-    height: 10vh;
-  } */
+  .container-destacados img{
+    width: 30%;
+    padding: 1vh;
+  }
 }

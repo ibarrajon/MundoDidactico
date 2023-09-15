@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Header.css';
 import { BsTelephoneFill } from "react-icons/bs";
 import { GoMail } from "react-icons/go";
@@ -30,7 +30,6 @@ const Header = () => {
 
             <div className="navbar">
                 <input type="checkbox" />
-
                 <GiHamburgerMenu className="fas fa-bars" />
                 <AiOutlineClose className="fas fa-times" />
 
