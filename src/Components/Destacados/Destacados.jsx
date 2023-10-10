@@ -6,9 +6,16 @@ const Destacados = () => {
     return(
         <section id="destacados">
             <div className="container-destacados">
-                <img src={arrayProductos[0].imagen} alt="" />       
-                <img src={arrayProductos[1].imagen} alt="" />
-                <img src={arrayProductos[2].imagen} alt="" />
+                <div className="item-destacado">
+                    <img src={arrayProductos[0].imagen} alt="" />  
+                </div>
+               
+                <div className="item-destacado">
+                    <img src={arrayProductos[2].imagen} alt="" />  
+                </div>
+                <div className="item-destacado">
+                    <img src={arrayProductos[1].imagen} alt="" />  
+                </div>
             </div>
         </section>
     )

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { BsTelephoneFill } from "react-icons/bs";
 import { GoMail } from "react-icons/go";
@@ -7,8 +7,30 @@ import logo from "../assets/logo.png"
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom"
 import { HashLink } from 'react-router-hash-link';
+import { Contacto } from '../Contacto/Contacto';
+import { useSpring, animated } from 'react-spring';
 
 const Header = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const logoAnimation = useSpring({
+        transform: isScrolled ? 'scale(0.5)' : 'scale(1)',
+        height: isScrolled ? '15vh' : '35vh',
+        config: { mass: 1, tension: 170, friction: 26 }
+    });
+
     return (
         <header id="inicio">
             <div className='inicio-datos'>
@@ -24,10 +46,11 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className="logo" >
-                <Link to="/"><img src={logo} alt="" /></Link>    
+            <div className={`logo ${isScrolled ? 'scrolled' : ''}`}>
+                <animated.div style={logoAnimation} className="logo-container">
+                    <img src={logo} alt="Logo" className="logo-image" />
+                </animated.div>
             </div>
-
             <div className="navbar">
                 <input type="checkbox" />
                 <GiHamburgerMenu className="fas fa-bars" />
@@ -43,7 +66,7 @@ const Header = () => {
                                 <li><HashLink smooth to="/#ofertas">CUBOS</HashLink></li>
                             </ul>
                         </li>
-                        <li><a href="#">CONTACTO</a></li>
+                        <li><Contacto nombreBoton="CONTACTO" /></li>
                     </ul>
                 </nav>
             </div>

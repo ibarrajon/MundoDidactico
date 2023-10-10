@@ -6,7 +6,6 @@ const Reels = () => {
     <section id="reels">
       <h2>VIDEOS</h2>
       <div className="reels-container">
-    
       </div>
     </section>
   )

@@ -1,14 +1,14 @@
 #inicio{
     position:sticky;
+    top: 0;
     z-index: 1;
     width: 100%;
-    top: 0;
     background-color: white;
 }
 
 .inicio-datos {
     color:white;
-    height: 3vh;
+    height: 4vh;
     background-color: #456789;
     display: flex; 
     justify-content: space-between; 
@@ -35,35 +35,55 @@
     color: white;
 }
 
-.logo {
+  .logo {
     display: flex;
     justify-content: center;
-    background-color: rgb(234, 245, 254);
-}
-
-.logo img {
-    width: 30vh;
-}
+    align-items: center;
+    background-image: url('../assets/fondo-principal.png');
+    transition: height 0.5s ease; /* Añadido para una transición suave de la altura */
+  }
+  
+  .logo.scrolled {
+    height: 10vh;
+  }
+  
+  .logo-container {
+    max-width: 35vh;
+    max-height: 35vh;
+    display: flex;
+  }
+  
+  .logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
 
 .navbar {
+    font-size: 1.2rem;
     color: white;
     position:relative;
     background: #123456;
-    min-height: 3vh;
+    min-height: 2vh;
     display: flex;
     justify-content: center; 
     align-items: center;
     align-content:center;
 }
 
-.navbar a {
+.navbar a, .li-contacto {
     color: inherit;
     text-decoration: none;
     display: block;
-    padding: 1vh 10vh;
+    padding: 0.7vh 10vh;
     background: #234567;
 }
   
+.li-contacto{
+    cursor:pointer;
+    color:white;
+}
+
 .navbar-links{
     display: flex;
     margin: 0;
@@ -94,13 +114,11 @@
 }
 
 .dropdown-contenido a {
-    /* padding: 1vh 5vh; */
-    /* padding-left: 1vh; */
     display: block;
     text-align: left;
 }
 
-.dropdown-contenido a:hover, .navbar-links a:hover {
+.dropdown-contenido a:hover, .navbar-links a:hover, .li-contacto:hover {
     background-color:#456789;
 }
 
@@ -108,6 +126,7 @@
     display: block; 
 } 
 
+/*CELULARES*/
 @media only screen and (min-width: 320px) and (max-width: 576px) {
     .inicio-datos {
         padding-left: 1vh;
@@ -123,9 +142,10 @@
         font-size: 0.5rem;
     }
 
-    .logo img {
-        width: 12vh;
-    }
+    .logo {
+        height: 10vh;
+        width: 10vh;
+      }
     
     .navbar{
         font-size: 0.7rem;
@@ -166,8 +186,33 @@
     .navbar .fa-bars, .navbar .fa-times {
         pointer-events: none;
     }
+
+    .logo{
+        height: 10vh;
+    }
 }
 
-@media only screen and (min-width: 576px) and (max-width: 1180px) {
+/*TABLETS (max-width: 768px) */
+@media only screen and (min-width: 576px) and (max-width: 1180px) { 
+    .inicio-datos {
+        font-size: 1rem
+    }
 
+    .inicio-info {
+        font-size: 0.7rem;
+    }
+
+    .logo {
+        height: 15vh;
+        width: 15vh;
+      }
+
+    .navbar {
+        font-size: 0.7rem;
+        min-height: 2vh;
+    }
+
+    .navbar a, .li-contacto {
+        padding: 1vh 7vh;
+    }
 }
